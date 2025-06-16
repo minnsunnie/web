@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giỏ hàng | AREUM</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo-section" tabindex="0">
+        <div class="nav-logo">
+          <img src="IMG/Neutral Beige Simple Aesthetic Flower Boutique Logo.png" alt="AREUM Logo" />
+          <h2>AREUM</h2>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li class="dropdown" tabindex="0"><a href="sanpham.html">Sản phẩm </a></li>
+        <li><a href="#lienhe">Liên hệ</a></li>
+      </ul>
+      <script src="index.js"></script>
+      <div class="nav-icons">
+        <div class="search-toggle" id="searchToggle">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="search-container" id="searchContainer">
+          <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm..." />
+          <button class="search-btn" id="searchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <a href="checkout.html" class="icon-btn" aria-label="Giỏ hàng">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+
+      <div id="auth-section">
+        <div id="auth-buttons">
+          <a href="login.html" class="btn-auth">Đăng nhập</a>
+          <a href="register.html" class="btn-register">Đăng ký</a>
+        </div>
+        <div id="user-profile" class="nav-user" tabindex="0" aria-label="Thông tin người dùng" style="display:none;">
+          <span class="user-name"><strong id="user-name"></strong></span>
+          <div class="user-dropdown" role="menu">
+            <a href="profile.html" role="menuitem">Thông tin cá nhân</a>
+            <a href="order.html" role="menuitem">Đơn hàng</a>
+            <a href="logout.html" role="menuitem" id="logout-btn">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Giỏ hàng của bạn</h1>
+    <div id="cart-container"></div>
+
+    <div class="cart-summary">
+      Tổng: <span id="total-price">0₫</span>
+    </div>
+
+    <div class="cart-actions">
+      <a href="sanpham.html" class="btn btn-secondary">Tiếp tục mua</a>
+      <a href="payment.html" class="btn btn-primary">Thanh toán</a>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="confirm-message">
+    <div class="modal-content">
+      <p id="confirm-message">Bạn có chắc muốn xóa sản phẩm này?</p>
+      <div class="modal-buttons">
+        <button id="confirm-yes">Có</button>
+        <button id="confirm-no">Không</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

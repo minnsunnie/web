@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm - AREUM</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="sanpham.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav>
+<di class="nav-container">
+  <div class="nav-logo-section" id="logoClick" tabindex="0">
+    <div class="nav-logo">
+      <img src="IMG/Neutral Beige Simple Aesthetic Flower Boutique Logo.png" alt="AREUM Logo" />
+      <h2>AREUM</h2>
+    </div>
+  </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+
+<li class="dropdown" tabindex="0">
+  <a href="sanpham.html">Sản phẩm </a>
+</li>
+<li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+    <script src="index.js"></script>
+<!-- Thanh Tìm Kiếm Responsive -->
+<div class="nav-icons">
+  <!-- Icon tìm kiếm cho mobile -->
+  <div class="search-toggle" id="searchToggle">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <!-- Ô tìm kiếm chính -->
+  <div class="search-container" id="searchContainer">
+    <input
+      type="text"
+      class="search-input"
+      id="searchInput"
+      placeholder="Tìm kiếm..."
+    />
+    <button class="search-btn" id="searchBtn">
+      <i class="fas fa-search"></i>
+    </button>
+    <button type="button" id="nav-clear-btn" title="Xóa tìm kiếm">✕</button>
+  </div>
+</div>
+<a href="checkout.html" class="cart-link cart-icon">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count" class="cart-count">0</span>
+</a>
+
+      <!-- Phần đăng nhập/đăng ký hoặc user profile -->
+      <div id="auth-section">
+        <!-- Khi chưa đăng nhập -->
+        <div id="auth-buttons">
+          <a href="login.html" class="btn-auth">Đăng nhập</a>
+          <a href="register.html" class="btn-register">Đăng ký</a>
+        </div>
+
+        <!-- Khi đã đăng nhập (ẩn mặc định) -->
+        <div id="user-profile" class="nav-user" tabindex="0" aria-label="Thông tin người dùng" style="display:none;">
+          <span class="user-name"><strong id="user-name"></strong></span>
+          <div class="user-dropdown" role="menu">
+            <a href="profile.html" role="menuitem">Thông tin cá nhân</a>
+            <a href="order.html" role="menuitem">Đơn hàng</a>
+            <a href="logout.html" role="menuitem" id="logout-btn">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ <section class="products">
+  <h1 class="section-title">Tất cả sản phẩm</h1>
+
+  <div class="filter-sort">
+    <!-- Lọc theo loại sản phẩm -->
+    <div class="filter-group">
+      <label for="type">Loại sản phẩm</label>
+      <select id="filter-category">
+        <option value="">Tất cả</option>
+        <option value="vong-tay">Vòng tay</option>
+        <option value="nen-thom">Nến thơm</option>
+        <option value="bup-be-len">Búp bê len</option>
+        <option value="tui-xach">Túi xách</option>
+        <option value="khan-len">Khăn len</option>
+        <option value="do-gom">Đồ gốm</option>
+        <option value="vong-co">Vòng cổ</option>
+      </select>
+    </div>
+
+    <!-- Lọc theo giá -->
+    <div class="filter-group">
+      <label for="price">Giá</label>
+      <select id="filter-price">
+        <option value="">Mặc định</option>
+        <option value="0-100000">Dưới ₫100,000</option>
+        <option value="100000-300000">₫100,000 – ₫300,000</option>
+        <option value="300000+">Trên ₫300,000</option>
+      </select>
+    </div>
+
+    <!-- Sắp xếp theo độ phổ biến -->
+    <div class="filter-group">
+      <label for="sort">Sắp xếp</label>
+      <select id="filter-popular">
+        <option value="">Mặc định</option>
+        <option value="1000">Đã bán dưới 1000</option>
+        <option value="2000">Đã bán trên 2000</option>
+        <option value="4000">Đã bán trên 4000</option>
+        <option value="6000">Đã bán trên 6000</option>
+      </select>
+    </div>
+
+    <!-- Nút thực hiện lọc -->
+    <div class="filter-group">
+      <button id="btn-search" class="btn-cart" style="margin-top: 22px;">Tìm kiếm</button>
+    </div>
+  </div>
+</section>
+
+<section id="product-section"></section>
+  <div class="products-grid">
+    <div class="product-card" data-id="sp001" data-type="vong-tay" data-material="da" data-price="150000">
+      <img src="IMG/vong tay.jpg" alt="Vòng Tay">
+      <div class="product-info">
+        <h3>Vòng Tay Vintage</h3>
+        <div class="info-row">
+          <div class="price">₫150,000</div>
+          <div class="sold">Đã bán: 6769</div>
+        </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp002" data-type="nem-thom" data-material="da" data-price="400000">
+      <img src="IMG/nen thom.webp" alt="Nến thơm" />
+      <div class="product-info">
+        <h3>Nến Thơm Thư Giản</h3>
+          <div class="info-row">
+    <div class="price">₫400,000</div>
+    <div class="sold">Đã bán: 6567</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp003" data-type="bup-be-len" data-material="da" data-price="350000">
+      <img src="IMG/bup be len.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Búp Bê Len</h3>
+         <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 6797</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp004" data-type="tui-xach" data-material="da" data-price="450000">
+      <img src="IMG/tui xach handemade.jpg" alt="Túi xách" />
+      <div class="product-info">
+        <h3>Túi Xách Handmade</h3>
+          <div class="info-row">
+    <div class="price">₫450,000</div>
+    <div class="sold">Đã bán: 6937</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp005" data-type="khan-len" data-material="da" data-price="350000">
+      <img src="IMG/khan len.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len</h3>
+         <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 6769</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+   <div class="product-card" data-id="sp006" data-type="gau-bong" data-material="da" data-price="300000">
+      <img src="IMG/gau bong.webp" alt="Gấu bông" />
+      <div class="product-info">
+        <h3>Gấu Bông Handmade</h3>
+         <div class="info-row">
+    <div class="price">₫300,000</div>
+    <div class="sold">Đã bán: 5586</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp007" data-type="do-gom" data-material="da" data-price="450000">
+      <img src="IMG/bình gốm.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Đồ Gốm Thủ Công</h3>
+          <div class="info-row">
+    <div class="price">₫450,000</div>
+    <div class="sold">Đã bán: 6520</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="sp008" data-type="vong-co" data-material="da" data-price="150000">
+      <img src="IMG/vong co.jpg" alt="Vòng cổ" />
+      <div class="product-info">
+        <h3>Chuỗi Hạt Trái Tim</h3>
+          <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 8934</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp009" data-type="bup-be" data-material="da" data-price="350000">
+        <img src="IMG/bupbelen1.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Búp Bê Tình Nhân</h3>
+         <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 4890</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp010" data-type="bup-be" data-material="da" data-price="350000">
+        <img src="IMG/bupbelen2.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Móc Khóa Cặp Đôi</h3>
+          <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 4296</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp011" data-type="bup-be" data-material="da" data-price="350000">
+        <img src="IMG/bupbelen3.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Nhân Vật One Piece</h3>
+          <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 2793</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp012" data-type="bup-be" data-material="da" data-price="300000">
+        <img src="IMG/bupbelen4.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>The Powerpuff Girls</h3>
+      <div class="info-row">
+    <div class="price">₫300,000</div>
+    <div class="sold">Đã bán: 3448</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp013" data-type="do-gom" data-material="da" data-price="200000">
+        <img src="IMG/dogom1.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Cốc Chíp Chíp</h3>
+      <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 4893</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp014" data-type="do-gom" data-material="da" data-price="500000">
+        <img src="IMG/dogom2.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Bộ Tách Mèo Con</h3>
+      <div class="info-row">
+    <div class="price">₫500,000</div>
+    <div class="sold">Đã bán: 3942</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp015" data-type="do-gom" data-material="da" data-price="200000">
+        <img src="IMG/dogom3.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Tách Trà Mùa Hè</h3>
+      <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 545</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp016" data-type="do-gom" data-material="da" data-price="125000">
+        <img src="IMG/dogom4.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Đế Đựng Hoa Tulip</h3>
+         <div class="info-row">
+    <div class="price">₫125,000</div>
+    <div class="sold">Đã bán: 5894</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp017" data-type="do-gom" data-material="da" data-price="200000">
+        <img src="IMG/dogom5.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Chén Eat Me</h3>
+      <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 8542</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp018" data-type="do-gom" data-material="da" data-price="250000">
+        <img src="IMG/dogom6.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Bình Hoa Điệu Đà</h3>
+      <div class="info-row">
+    <div class="price">₫250,000</div>
+    <div class="sold">Đã bán: 782</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp019" data-type="khan-len" data-material="da" data-price="200000">
+        <img src="IMG/khanlen1.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len Đày Đặn Màu Đỏ</h3>
+          <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 327</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp020" data-type="khan-len" data-material="da" data-price="200000">
+        <img src="IMG/khanlen2.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len Đày Đặn Màu Xám</h3>
+         <div class="info-row">
+    <div class="price">200,000</div>
+    <div class="sold">Đã bán: 172</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp021" data-type="khan-len" data-material="da" data-price="200000">
+        <img src="IMG/khanlen3.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len Nhung Đũa</h3>
+      <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 137</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp022" data-type="khan-len" data-material="da" data-price="200000">
+        <img src="IMG/khanlen4.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len Nhung Xù</h3>
+       <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 251</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp023" data-type="khan-len" data-material="da" data-price="200000">
+        <img src="IMG/khanlen5.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len Nhung Xù Hình Gấu</h3>
+  <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 253</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp024" data-type="moc-khoa" data-material="da" data-price="150000">
+        <img src="IMG/mockhoa1.jpg" alt="móc khóa" />
+      <div class="product-info">
+        <h3>Vòng Hoa Nguyệt Quế</h3>
+   <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 682</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp025" data-type="moc-khoa" data-material="da" data-price="50000">
+        <img src="IMG/mockhoa2.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Móc Khóa Ngôi Sao</h3>
+          <div class="info-row">
+    <div class="price">₫50,000</div>
+    <div class="sold">Đã bán: 2698</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp026" data-type="moc-khoa" data-material="da" data-price="70000">
+        <img src="IMG/mockhoa3.jpg" alt="móc khóa" />
+      <div class="product-info">
+        <h3>Bó Hoa Len Mini</h3>
+         <div class="info-row">
+    <div class="price">₫70,000</div>
+    <div class="sold">Đã bán: 6253</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp027" data-type="nen-thom" data-material="da" data-price="300000">
+        <img src="IMG/nenthom1.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Nên Hoa Khô Trang Trí</h3>
+         <div class="info-row">
+    <div class="price">₫300,000</div>
+    <div class="sold">Đã bán: 3456</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp028" data-type="nen-thom" data-material="da" data-price="400000">
+        <img src="IMG/nenthom2.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Ly Đựng Nến Luxury</h3>
+     <div class="info-row">
+    <div class="price">₫400,000</div>
+    <div class="sold">Đã bán: 3332</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp029" data-type="nen-thom" data-material="da" data-price="250000">
+        <img src="IMG/nenthom3.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Nến Trái Cây</h3>
+  <div class="info-row">
+    <div class="price">₫250,000</div>
+    <div class="sold">Đã bán: 2324</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp030" data-type="nen-thom" data-material="da" data-price="250000">
+        <img src="IMG/nenthom4.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Nến Sen Đá</h3>
+      <div class="info-row">
+    <div class="price">₫250,000</div>
+    <div class="sold">Đã bán: 353</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp031" data-type="nen-thom" data-material="da" data-price="400000">
+        <img src="IMG/nenthom5.jpg" alt="nên thơm" />
+      <div class="product-info">
+        <h3>Nến Sò Biển</h3>
+       <div class="info-row">
+    <div class="price">₫400,000</div>
+    <div class="sold">Đã bán: 2235</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp032" data-type="nen-thom" data-material="da" data-price="450000">
+        <img src="IMG/nenthom6.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Nến Hoa 3D</h3>
+       <div class="info-row">
+    <div class="price">₫450,000</div>
+    <div class="sold">Đã bán: 222</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp033" data-type="nen-thom" data-material="da" data-price="250000">
+        <img src="IMG/nenthom7.jpg" alt="nến thơm" />
+      <div class="product-info">
+        <h3>Ly Nến Flower</h3>
+     <div class="info-row">
+    <div class="price">₫250,000</div>
+    <div class="sold">Đã bán: 233</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp034" data-type="tui-len" data-material="da" data-price="200000">
+        <img src="IMG/tuilen1.jpg" alt="túi len" />
+      <div class="product-info">
+        <h3>Túi Len Đeo Chéo Hoa Hồng</h3>
+    <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 232</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp035" data-type="tui-len" data-material="da" data-price="200000">
+        <img src="IMG/tuilen2.jpg" alt="túi len" />
+      <div class="product-info">
+        <h3>Túi Hoa Xinh Xắn</h3>
+     <div class="info-row">
+    <div class="price">₫200,000</div>
+    <div class="sold">Đã bán: 234</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp036" data-type="tui-len" data-material="da" data-price="200000">
+        <img src="IMG/tuilen3.jpg" alt="túi len" />
+      <div class="product-info">
+        <h3>Túi Lưới Đính Kèm</h3>
+    <div class="info-row">
+    <div class="price">200,000</div>
+    <div class="sold">Đã bán: 232</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+       <div class="product-card" data-id="sp037" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco1.jpg" alt="vòng co" />
+      <div class="product-info">
+        <h3>Vòng Cổ Vỏ Sò</h3>
+  <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 3254</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+      <div class="product-card" data-id="sp038" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco2.jpg" alt="vòng cổ" />
+      <div class="product-info">
+        <h3>Vòng Cổ Đá Phong Thủy</h3>
+     <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 276</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+      <div class="product-card" data-id="sp039" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco3.jpg" alt="vòng cổ" />
+      <div class="product-info">
+        <h3>Vòng Cổ Nơ</h3>
+      <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 365</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+      <div class="product-card" data-id="sp040" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco4.jpg" alt="vòng cổ" />
+      <div class="product-info">
+        <h3>Vòng Cổ Đính Hạt</h3>
+       <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 897</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+       <div class="product-card" data-id="sp041" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco5.jpg" alt="vòng cổ" />
+      <div class="product-info">
+        <h3>Vòng Cổ Bươm Bướm</h3>
+   <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 756</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+      <div class="product-card" data-id="sp042" data-type="vong-co" data-material="da" data-price="155000">
+        <img src="IMG/vongco6.jpg" alt="vòng cổ" />
+      <div class="product-info">
+        <h3>Vòng Cổ Sao Biển</h3>
+  <div class="info-row">
+    <div class="price">₫155,000</div>
+    <div class="sold">Đã bán: 4776</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    
+      <div class="product-card" data-id="sp043" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay1.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng tay Charm Hồng Pastel</h3>
+     <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 867</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp044" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay2.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng tay Đại Dương</h3>
+     <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 5785</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp045" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay3.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng Tay Mùa Thu</h3>
+        <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 476</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp046" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay4.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng Tay Đôi "Nick-Judy"</h3>
+  <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 4534</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp047" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay5.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng Tay Hoa Lá</h3>
+  <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 3536</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+      <div class="product-card" data-id="sp048" data-type="vong-tay" data-material="da" data-price="150000">
+        <img src="IMG/vongtay6.jpg" alt="vòng tay" />
+      <div class="product-info">
+        <h3>Vòng Tay Sky</h3>
+  <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 4575</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+    </div>
+    </section>
+<script src="cart.js"></script> 
+<script src="search.js"></script>
+<script src="sanpham.js"></script>
+<script src="logoNav.js"></script>
+</body>
+</html>

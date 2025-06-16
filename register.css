@@ -1,0 +1,158 @@
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fffdf9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .register-box {
+      width: 900px;
+      height: 580px;
+      display: flex;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .left-side {
+      flex: 1;
+      background: url('IMG/handmade-bg.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .left-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: 1;
+    }
+
+    .left-side img {
+      width: 130px;
+      z-index: 2;
+    }
+
+    .left-side h3 {
+      margin-top: 15px;
+      text-align: center;
+      color: #444;
+      font-weight: 600;
+      z-index: 2;
+      padding: 0 10px;
+    }
+
+    .right-side {
+      flex: 1;
+      background: #fff;
+      padding: 35px;
+    }
+
+    .form-title {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #d86c6c;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-control-icon {
+      position: relative;
+    }
+
+    .form-control-icon i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    .form-control-icon input {
+      padding-left: 35px;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      display: none;
+    }
+
+    button.btn-submit {
+      background-color: #d86c6c;
+      color: #fff;
+      border: none;
+      width: 100%;
+    }
+
+    button.btn-submit:hover {
+      background-color: #b25757;
+    }
+
+    .form-text a {
+      color: #d86c6c;
+    }
+
+    .gender-options {
+      margin-top: 5px;
+    }
+
+    .gender-options label {
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .register-box {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
+
+      .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        height: auto;
+      }
+
+      .left-side {
+        padding: 30px 20px;
+      }
+
+      .right-side {
+        padding: 30px 20px;
+      }
+    }
+      .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #fffaf5;
+  }
+
+  .logo-img {
+    width: 200%;
+    max-width: 300px; /* Logo không quá to */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05); /* Nhẹ nhàng phóng to khi rê chuột */
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      max-width: 200px;
+    }
+  }

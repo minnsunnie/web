@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AREUM - Handmade Crafts Shop</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<nav>
+<div class="nav-container">
+  <div class="nav-logo-section" id="logoClick" tabindex="0">
+    <div class="nav-logo">
+      <img src="IMG/Neutral Beige Simple Aesthetic Flower Boutique Logo.png" alt="AREUM Logo" />
+      <h2>AREUM</h2>
+    </div>
+  </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+
+<li class="dropdown" tabindex="0">
+  <a href="sanpham.html">Sản phẩm </a>
+</li>
+<li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+    <script src="index.js"></script>
+<!-- Thanh Tìm Kiếm Responsive -->
+<div class="nav-icons">
+  <!-- Icon tìm kiếm cho mobile -->
+  <div class="search-toggle" id="searchToggle">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <!-- Ô tìm kiếm chính -->
+  <div class="search-container" id="searchContainer">
+    <input
+      type="text"
+      class="search-input"
+      id="searchInput"
+      placeholder="Tìm kiếm..."
+    />
+    <button class="search-btn" id="searchBtn">
+      <i class="fas fa-search"></i>
+    </button>
+    <button type="button" id="nav-clear-btn" title="Xóa tìm kiếm">✕</button>
+  </div>
+</div>
+
+
+
+<a href="checkout.html" class="cart-link cart-icon">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count">0</span>
+</a>
+
+
+
+      <!-- Phần đăng nhập/đăng ký hoặc user profile -->
+      <div id="auth-section">
+        <!-- Khi chưa đăng nhập -->
+        <div id="auth-buttons">
+          <a href="login.html" class="btn-auth">Đăng nhập</a>
+          <a href="register.html" class="btn-register">Đăng ký</a>
+        </div>
+
+        <!-- Khi đã đăng nhập (ẩn mặc định) -->
+        <div id="user-profile" class="nav-user" tabindex="0" aria-label="Thông tin người dùng" style="display:none;">
+          <img src="IMG/user-avatar.png" alt="Avatar người dùng" class="user-avatar" />
+          <span class="user-name"><strong id="user-name"></strong></span>
+          <div class="user-dropdown" role="menu">
+            <a href="profile.html" role="menuitem">Thông tin cá nhân</a>
+            <a href="order.html" role="menuitem">Đơn hàng</a>
+            <a href="logout.html" role="menuitem" id="logout-btn">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <div class="hero-section">
+    <div class="hero-content">
+  <h1>AREUM – Tinh Hoa Trong Từng Chi Tiết</h1>
+  <p>Nơi những món quà thủ công được tạo nên từ tình yêu, sự tỉ mỉ và cảm hứng nghệ thuật.</p>
+  <div class="hero-buttons">
+    <a href="#about" class="hero-btn secondary">Giới Thiệu</a>
+  </div>
+</div>
+
+        </div>
+    </div>
+<section class="intro-section">
+  <h2 class="intro-title">Chúng tôi không chỉ tạo ra sản phẩm – chúng tôi trao gửi cảm xúc</h2>
+  <div class="intro-container">
+    <div class="intro-card animate" style="animation-delay: 0s">
+      <i class="fas fa-hands icon-animate" aria-hidden="true"></i>
+      <h3>Khéo léo từng đường kim</h3>
+      <p>Không chỉ là sản phẩm, mỗi món đồ là kết tinh của hàng giờ lao động, đôi bàn tay đầy đam mê và tình yêu dành cho cái đẹp.</p>
+    </div>
+    <div class="intro-card animate" style="animation-delay: 0.2s">
+      <i class="fas fa-palette icon-animate" aria-hidden="true"></i>
+      <h3>Dấu ấn sáng tạo cá nhân</h3>
+      <p>Mỗi thiết kế là một câu chuyện – không trùng lặp, không đại trà – mang theo tinh thần riêng biệt của người tạo ra và người được nhận.</p>
+    </div>
+    <div class="intro-card animate" style="animation-delay: 0.4s">
+      <i class="fas fa-gift icon-animate" aria-hidden="true"></i>
+      <h3>Món quà mang cảm xúc</h3>
+      <p>Không đơn thuần là quà tặng, đó là sự kết nối, là lời nhắn gửi chân thành được gói ghém trong từng chi tiết thủ công đầy tâm huyết.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+<section id="about" style="position: relative; overflow: hidden;width:100vw; max-width: 100vx; margin: 0 auto; border-radius:0; font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom,#ffffff, #f4e7d0 , #ffffff );
+">
+  <div style="
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    background: linear-gradient(to bottom,#ffffff, #f4e7d0, #ffffff);
+    padding: 100px 80px;  /* tăng padding */
+    box-sizing: border-box;
+    overflow-x: hidden;
+    border-radius: 25px;
+  ">
+    <div style="
+      flex: 0 0 auto;
+      width: 450px;
+      height: 550px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    ">
+      <img src="IMG/Neutral Beige Simple Aesthetic Flower Boutique Logo.png" alt="Handmade Art" style="
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      ">
+    </div>
+
+<div style="
+  flex: 1 1 70%;
+  min-width: 280px;
+  font-size: 1.05em;  /* chữ to hơn 1 chút */
+  color: #3a3a3a;
+  line-height: 1.6;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+">
+
+      <h2 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 2.4em;     /* tăng cỡ tiêu đề */
+        color: #8b5e3c;
+        margin-bottom: 20px;
+      ">Giới Thiệu Về AREUM</h2>
+
+      <p><strong>AREUM</strong> ra đời từ khát khao gìn giữ những giá trị tinh tế, mộc mạc và chân thật trong từng sản phẩm thủ công. Đối với chúng tôi, làm ra một món đồ không chỉ đơn thuần là quá trình tạo nên hình hài vật chất – mà đó là hành trình kết nối giữa bàn tay, trái tim và tâm hồn của người làm với người nhận.</p>
+
+      <p>Tại AREUM, mỗi sản phẩm đều được thực hiện tỉ mỉ bằng tay, với sự cẩn trọng trong từng đường kim, mũi chỉ, từng lớp vải hay thớ gỗ. Chúng tôi sử dụng nguyên liệu hoàn toàn từ tự nhiên – không chỉ vì sự thân thiện với môi trường, mà còn bởi niềm tin rằng thiên nhiên luôn mang lại cảm giác an yên và chữa lành.</p>
+
+      <p>Chúng tôi không sản xuất hàng loạt. Chúng tôi làm ra những món đồ mang cá tính riêng, phản ánh tâm trạng, cảm xúc và cả câu chuyện của người nghệ nhân. Vì vậy, mỗi sản phẩm từ AREUM đều là phiên bản duy nhất – không hoàn hảo theo tiêu chuẩn công nghiệp, nhưng đầy đặn cảm xúc và chất lượng từ tâm.</p>
+
+      <p>AREUM không chỉ là nơi để bạn tìm kiếm một món quà xinh xắn. Đó là nơi bạn cảm nhận được sự chậm rãi, tinh tế giữa nhịp sống hối hả. Là nơi bạn chọn gửi gắm tình cảm, lời nhắn nhủ, và đôi khi, là chính bản thân mình – trong hình hài một món đồ thủ công nhỏ bé nhưng đầy ý nghĩa.</p>
+
+      <a href="sanpham.html" style="
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 32px;
+        background-color: #a27654;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        width: fit-content;
+        font-size: 1.1em;
+      "
+      onmouseover="this.style.backgroundColor='#714b30'"
+      onmouseout="this.style.backgroundColor='#8b5e3c'">
+        Khám Phá Bộ Sưu Tập
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <h2>Sản Phẩm Nổi Bật</h2>
+  <div class="product-grid">
+
+    <div class="product-item" data-id="sp001" data-type="vong-tay" data-material="da" data-price="150000">
+      <img src="IMG/vong tay.jpg" alt="Vòng Tay">
+      <div class="product-info">
+        <h3>Vòng Tay Vintage</h3>
+        <div class="info-row">
+          <div class="price">₫150,000</div>
+          <div class="sold">Đã bán: 63769</div>
+        </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp002" data-type="nen-thom" data-material="sáp" data-price="400000">
+      <img src="IMG/nen thom.webp" alt="Nến thơm" />
+      <div class="product-info">
+        <h3>Nến Thơm Thư Giản</h3>
+        <div class="info-row">
+          <div class="price">₫400,000</div>
+          <div class="sold">Đã bán: 6567</div>
+        </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp003" data-type="bup-be-len" data-material="len" data-price="350000">
+      <img src="IMG/bup be len.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Búp Bê Len</h3>
+        <div class="info-row">
+          <div class="price">₫350,000</div>
+          <div class="sold">Đã bán: 6797</div>
+        </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp004" data-type="tui-xach" data-material="da" data-price="450000">
+      <img src="IMG/tui xach handemade.jpg" alt="Túi xách" />
+      <div class="product-info">
+        <h3>Túi Xách Handmade</h3>
+          <div class="info-row">
+    <div class="price">₫450,000</div>
+    <div class="sold">Đã bán: 6937</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp005" data-type="khan-len" data-material="da" data-price="350000">
+      <img src="IMG/khan len.jpg" alt="Khăn len" />
+      <div class="product-info">
+        <h3>Khăn Len</h3>
+         <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 6769</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp006" data-type="gau-bong" data-material="da" data-price="300000">
+      <img src="IMG/gau bong.webp" alt="Gấu bông" />
+      <div class="product-info">
+        <h3>Gấu Bông Handmade</h3>
+         <div class="info-row">
+    <div class="price">₫300,000</div>
+    <div class="sold">Đã bán: 5586</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp007" data-type="do-gom" data-material="da" data-price="450000">
+      <img src="IMG/bình gốm.jpg" alt="Đồ gốm" />
+      <div class="product-info">
+        <h3>Đồ Gốm Thủ Công</h3>
+          <div class="info-row">
+    <div class="price">₫450,000</div>
+    <div class="sold">Đã bán: 6520</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp008" data-type="vong-co" data-material="da" data-price="150000">
+      <img src="IMG/vong co.jpg" alt="Vòng cổ" />
+      <div class="product-info">
+        <h3>Chuỗi Hạt Trái Tim</h3>
+          <div class="info-row">
+    <div class="price">₫150,000</div>
+    <div class="sold">Đã bán: 8934</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+
+    <div class="product-item" data-id="sp009" data-type="bup-be" data-material="da" data-price="350000">
+        <img src="IMG/bupbelen1.jpg" alt="Búp bê len" />
+      <div class="product-info">
+        <h3>Búp Bê Tình Nhân</h3>
+         <div class="info-row">
+    <div class="price">₫350,000</div>
+    <div class="sold">Đã bán: 4890</div>
+  </div>
+        <a href="#" class="btn-cart"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special-offer">
+  <div class="offer-content">
+    <div class="offer-text">
+      <div class="offer-logo">
+        <i class="fas fa-gift fa-2x"></i>
+      </div>
+      <h2>Ưu Đãi Đặc Biệt Dành Riêng Cho Bạn</h2>
+        <p>Những ưu đãi thủ công xinh xắn chỉ dành riêng cho bạn – hãy khám phá ngay trước khi hết hạn!</p>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span id="days">00</span><br><small>Ngày</small>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span><br><small>Giờ</small>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span><br><small>Phút</small>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span><br><small>Giây</small>
+        </div>
+      </div>
+
+      <a href="javascript:void(0);" class="offer-btn" id="exploreBtn">Khám Phá Ngay</a>
+
+    </div>
+
+    <div class="offer-slider">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="IMG/sale1.jpg" class="d-block w-100" alt="Sale 1">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/sale2.jpg" class="d-block w-100" alt="Sale 2">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/sale4.jpg" class="d-block w-100" alt="Sale 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS (đặt sau nội dung HTML) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+ <section class="special-offers" id="special-offers">
+  <div class="container">
+    <h2 class="section-title">Ưu Đãi Đặc Biệt</h2>
+     <div class="offers-grid">
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m2 2a9 9 0 11-6-8.485M9 11l6 6" />
+          </svg>
+        </div>
+        <h3>Giảm 10% Đơn Hàng Đầu</h3>
+        <p>Chào mừng bạn đến với AREUM! Đơn đầu tiên sẽ được giảm 10%.</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a1 1 0 100-2 1 1 0 000 2zm11-6V9a2 2 0 00-2-2h-6v6h8zm-1 6a1 1 0 100-2 1 1 0 000 2z" />
+          </svg>
+        </div>
+        <h3>Miễn Phí Vận Chuyển</h3>
+        <p>Cho mọi đơn từ 500.000₫ – giao hàng tận nơi trên toàn quốc.</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12v8H4v-8m16-4H4v4h16V8zm-8 0V4m0 0a2 2 0 100 4 2 2 0 100-4z" />
+          </svg>
+        </div>
+        <h3>Mua 2 Tặng 1</h3>
+        <p>Áp dụng cho tất cả vòng tay – sưu tầm đủ sắc màu theo cách của bạn.</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 17l-4.5 2.5 1-4.5L5 11l4.75-.4L12 6l2.25 4.6L19 11l-3.5 4 1 4.5L12 17z" />
+          </svg>
+        </div>
+        <h3>Quà Độc Quyền</h3>
+        <p>Đơn hàng từ 1 triệu đồng sẽ nhận được một món quà đặc biệt từ AREUM.</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3>Ưu Đãi Lễ – Tết</h3>
+        <p>Khám phá các chương trình khuyến mãi theo mùa – đầy bất ngờ và yêu thương.</p>
+      </div>
+
+      <div class="offer-card">
+        <div class="icon sparkle">
+          <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6c63ff">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A8 8 0 1016 5v1a4 4 0 00-8 0v1m8 0a4 4 0 11-8 0" />
+          </svg>
+        </div>
+        <h3>Thành Viên VIP</h3>
+        <p>Tích điểm – nhận quà – ưu đãi độc quyền dành riêng cho bạn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fade-up">Khách hàng nói gì về AREUM?</h2>
+
+    <div id="testimonialCarousel" class="carousel slide fade-up" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="testimonial-card text-center p-4">
+            <img src="https://i.pravatar.cc/80?img=12" class="rounded-circle mb-3" alt="Avatar">
+            <p class="mb-2">"Sản phẩm đẹp vượt mong đợi, đóng gói tinh tế. Mình rất hài lòng!"</p>
+            <div class="text-warning mb-2">★★★★★</div>
+            <h5 class="fw-semibold">– Huyền N., Hà Nội</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card text-center p-4">
+            <img src="https://i.pravatar.cc/80?img=24" class="rounded-circle mb-3" alt="Avatar">
+            <p class="mb-2">"AREUM luôn mang đến trải nghiệm mua hàng ấm áp và đáng nhớ."</p>
+            <div class="text-warning mb-2">★★★★☆</div>
+            <h5 class="fw-semibold">– Trí P., TP.HCM</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card text-center p-4">
+            <img src="https://i.pravatar.cc/80?img=45" class="rounded-circle mb-3" alt="Avatar">
+            <p class="mb-2">"Mình sẽ tiếp tục ủng hộ vì sản phẩm quá chất lượng, đóng gói đẹp."</p>
+            <div class="text-warning mb-2">★★★★★</div>
+            <h5 class="fw-semibold">– An T., Đà Nẵng</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Điều hướng trái phải -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="testimonial-stats mt-5 fade-up">
+    <div class="stat-box text-center">
+      <h3 class="counter" data-target="30000">0</h3>
+      <p>Lượt truy cập</p>
+    </div>
+    <div class="stat-box text-center">
+      <h3 class="counter" data-target="30000">0</h3>
+      <p>Đơn hàng hoàn thành</p>
+    </div>
+    <div class="stat-box text-center">
+      <h3 class="counter" data-target="32980">0</h3>
+      <p>Đánh giá đã nhận</p>
+    </div>
+    <div class="stat-box text-center">
+      <h3>⭐ 4.9/5</h3>
+      <p>Đánh giá trung bình</p>
+    </div>
+    <div class="stat-box text-center">
+      <h3>98%</h3>
+      <p>Khách hàng hài lòng</p>
+    </div>
+    <div class="stat-box text-center">
+      <h3>98%</h3>
+      <p>Khách quay lại</p>
+    </div>
+  </div>
+</section>
+<section class="social-footer">
+  <div class="social-links">
+    <h3>Kết Nối Với Chúng Tôi</h3>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener" class="fb">
+        <!-- SVG icon Facebook -->
+        Facebook
+      </a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener" class="ig">
+        <!-- SVG icon Instagram -->
+        Instagram
+      </a>
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" rel="noopener" class="tt">
+        <!-- SVG icon TikTok -->
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+<section class="map-section">
+  <div class="map-info-wrapper">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.466869344967!2d106.66978571401456!3d10.74802819232413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2bbd3a2c2f%3A0x1325ca11552413a2!2zQsO0bmcgVMO0bmcgQsOsbmggQ2h1eeG7hW4gSMOyYSBUaMO0bmcsIFBoxrDhu51uZyA0LCBHw7IgTuG6tW5nIFThuqFjaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1686972003206!5m2!1svi!2s"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="contact-info">
+      <div class="info-item">
+        <strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP.HCM
+      </div>
+      <div class="info-item">
+        <strong>Hotline:</strong> 0123 456 789
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong> support@areum.vn
+      </div>
+      <div class="info-item">
+        <strong>Giờ làm việc:</strong> 
+        <li>Thứ 2 - Thứ 6: 09:00 – 18:00</li>
+          <li>Thứ 7: 09:00 – 16:00</li>
+          <li>Chủ nhật: Nghỉ</li>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="index.js"></script>
+<section class="info-toggle-section">
+  <h2>Thông Tin Hướng Dẫn</h2>
+  
+  <div class="info-grid">
+    <div class="info-item">
+      <button class="info-toggle">
+        <span class="icon">📦</span> Chính Sách Đổi Trả
+        <span class="arrow">▾</span>
+      </button>
+      <div class="info-content">
+        <p>AREUM hỗ trợ đổi/trả sản phẩm trong vòng <strong>7 ngày</strong> kể từ ngày nhận hàng với các điều kiện sau:</p>
+        <ul>
+          <li>Sản phẩm còn nguyên tem, nhãn mác, chưa qua sử dụng.</li>
+          <li>Có hóa đơn mua hàng hoặc bằng chứng giao dịch hợp lệ.</li>
+          <li>Không áp dụng đổi trả với sản phẩm giảm giá hoặc làm theo yêu cầu riêng.</li>
+        </ul>
+        <p>Quý khách vui lòng liên hệ <strong>Hotline 0987 654 321</strong> trước khi gửi trả để được hướng dẫn chi tiết.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <button class="info-toggle">
+        <span class="icon">📄</span> Điều Khoản Sử Dụng
+        <span class="arrow">▾</span>
+      </button>
+      <div class="info-content">
+        <p>Khi sử dụng dịch vụ của AREUM, bạn đồng ý với các điều khoản sau:</p>
+        <ul>
+          <li>Không sao chép hoặc sử dụng lại hình ảnh, nội dung từ website khi chưa có sự cho phép.</li>
+          <li>AREUM có quyền từ chối đơn hàng nếu phát hiện thông tin không hợp lệ.</li>
+          <li>Tất cả thông tin khách hàng cung cấp phải trung thực và chính xác.</li>
+        </ul>
+        <p>Chúng tôi cam kết bảo mật thông tin của bạn theo <strong>Chính sách bảo mật</strong> của AREUM.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <button class="info-toggle">
+        <span class="icon">💳</span> Hướng Dẫn Thanh Toán
+        <span class="arrow">▾</span>
+      </button>
+      <div class="info-content">
+        <p>AREUM hỗ trợ các hình thức thanh toán sau:</p>
+        <ul>
+          <li><strong>Chuyển khoản ngân hàng</strong>: Thông tin tài khoản được hiển thị khi đặt hàng.</li>
+          <li><strong>Thanh toán khi nhận hàng (COD)</strong>: Áp dụng tại TP.HCM và các khu vực hỗ trợ.</li>
+          <li><strong>Ví điện tử</strong>: Momo, ZaloPay (sắp ra mắt).</li>
+        </ul>
+        <p>Sau khi thanh toán thành công, quý khách sẽ nhận được xác nhận qua email.</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <button class="info-toggle">
+        <span class="icon">🔒</span> Chính Sách Bảo Mật
+        <span class="arrow">▾</span>
+      </button>
+      <div class="info-content">
+        <p>AREUM cam kết bảo vệ tuyệt đối thông tin cá nhân của khách hàng:</p>
+        <ul>
+          <li>Không chia sẻ thông tin cho bên thứ ba nếu không có sự đồng ý của khách hàng.</li>
+          <li>Thông tin chỉ sử dụng để xử lý đơn hàng và chăm sóc khách hàng.</li>
+          <li>Dữ liệu được lưu trữ an toàn theo chuẩn bảo mật.</li>
+        </ul>
+        <p>Khách hàng có quyền yêu cầu chỉnh sửa hoặc xóa thông tin qua email <strong>areum.handmade@gmail.com</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="copyright">
+  <p>© 2025 AREUM. All rights reserved.</p>
+  <script src="cart.js"></script>
+  <script src="search.js"></script>
+  <script src="logoNav.js"></script>
+</div>
+</body>
+</html>

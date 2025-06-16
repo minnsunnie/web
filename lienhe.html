@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm - AREUM</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="lienhe.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav>
+<div class="nav-container">
+  <div class="nav-logo-section" id="logoClick" tabindex="0">
+    <div class="nav-logo">
+      <img src="IMG/Neutral Beige Simple Aesthetic Flower Boutique Logo.png" alt="AREUM Logo" />
+      <h2>AREUM</h2>
+    </div>
+  </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+
+<li class="dropdown" tabindex="0">
+  <a href="sanpham.html">Sản phẩm </a>
+</li>
+<li><a href="#lienhe">Liên hệ</a></li>
+    </ul>
+    <script src="index.js"></script>
+<!-- Thanh Tìm Kiếm Responsive -->
+<div class="nav-icons">
+  <!-- Icon tìm kiếm cho mobile -->
+  <div class="search-toggle" id="searchToggle">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <!-- Ô tìm kiếm chính -->
+  <div class="search-container" id="searchContainer">
+    <input
+      type="text"
+      class="search-input"
+      id="searchInput"
+      placeholder="Tìm kiếm..."
+    />
+    <button class="search-btn" id="searchBtn">
+      <i class="fas fa-search"></i>
+    </button>
+    <button type="button" id="nav-clear-btn" title="Xóa tìm kiếm">✕</button>
+  </div>
+</div>
+<a href="checkout.html" class="cart-link cart-icon">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="cart-count" class="cart-count">0</span>
+</a>
+
+       <!-- Phần đăng nhập/đăng ký hoặc user profile -->
+      <div id="auth-section">
+        <!-- Khi chưa đăng nhập -->
+        <div id="auth-buttons">
+          <a href="login.html" class="btn-auth">Đăng nhập</a>
+          <a href="register.html" class="btn-register">Đăng ký</a>
+        </div>
+
+        <!-- Khi đã đăng nhập (ẩn mặc định) -->
+        <div id="user-profile" class="nav-user" tabindex="0" aria-label="Thông tin người dùng" style="display:none;">
+          <span class="user-name"><strong id="user-name"></strong></span>
+          <div class="user-dropdown" role="menu">
+           <a href="profile.html" role="menuitem">Thông tin cá nhân</a>
+            <a href="order.html" role="menuitem">Đơn hàng</a>
+            <a href="logout.html" role="menuitem" id="logout-btn">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<header>
+ <main>
+    <section id="intro">
+      <h2>Liên hệ với AREUM</h2>
+      <p>
+        Chúng tôi rất vui khi được kết nối với bạn! Nếu bạn có bất kỳ câu hỏi nào về sản phẩm, đơn hàng, hợp tác hoặc đóng góp ý kiến để cải thiện dịch vụ, đừng ngần ngại gửi tin nhắn cho chúng tôi. Mỗi ý kiến của bạn là động lực để AREUM tiếp tục phát triển và mang lại những sản phẩm thủ công chất lượng, ý nghĩa.
+      </p>
+      <p>
+        Hãy sử dụng biểu mẫu liên hệ bên dưới hoặc liên hệ trực tiếp qua thông tin của chúng tôi. Đội ngũ AREUM cam kết phản hồi trong vòng 24–48 giờ làm việc.
+      </p>
+    </section>
+
+    <section id="contact-form">
+      <h2>Biểu mẫu liên hệ</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Họ và tên" required>
+        <input type="email" name="email" placeholder="Email của bạn" required>
+        <input type="text" name="subject" placeholder="Chủ đề">
+        <textarea name="message" rows="5" placeholder="Nội dung liên hệ..." required></textarea>
+        <button type="submit">Gửi liên hệ</button>
+      </form>
+    </section>
+
+    <section id="contact-info">
+      <h2>Thông tin liên hệ trực tiếp</h2>
+      <p><strong>Email:</strong> support@areum.vn</p>
+      <p><strong>Điện thoại:</strong> 0123 456 789</p>
+      <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Phường 7, Quận Phú Nhuận, TP.HCM</p>
+    </section>
+
+<form action="https://formsubmit.co/el/jiyole" method="POST">
+  <input type="text" name="name" placeholder="Họ và tên" required>
+  <input type="email" name="email" placeholder="Email của bạn" required>
+  <textarea name="message" placeholder="Nội dung" required></textarea>
+
+  <!-- Ẩn spam bot -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- Không hiện captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Tiêu đề email -->
+  <input type="hidden" name="_subject" value="Tin nhắn mới từ khách hàng AREUM">
+
+  <!-- Trang cảm ơn sau khi gửi -->
+  <input type="hidden" name="_redirect" value="https://areum.id.vn/camon.html">
+
+  <button type="submit">Gửi liên hệ</button>
+</form>
+
+
+
+
+    <section id="working-hours">
+      <h2>Giờ làm việc</h2>
+      <div class="working-hours">
+        <ul>
+          <li>Thứ 2 - Thứ 6: 09:00 – 18:00</li>
+          <li>Thứ 7: 09:00 – 16:00</li>
+          <li>Chủ nhật: Nghỉ</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="store-location" class="fade-up">
+      <h2>Địa chỉ cửa hàng</h2>
+      <div class="map-container">
+        <div class="address-box">
+          <h3>AREUM Handmade Boutique</h3>
+          <p>📍 123 Đường Hùng Vương, Quận Hải Châu, Đà Nẵng, Việt Nam</p>
+          <p>📞 0901 234 567</p>
+          <p>📧 areum.handmade@gmail.com</p>
+          <p>🕓 Thời gian hoạt động: 9:00 – 20:00 (Thứ 2 đến Chủ nhật)</p>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=..."
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+  <script src="lienhe.js"></script>
+<script src="logoNav.js"></script>
+</body>
+</html>
